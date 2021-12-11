@@ -17,7 +17,7 @@ pipeline {
     stage('Push image') {
       steps {
         script {
-          docker.withRegistry('https://docker.premsiserv.com', 'nexusjenkinsuser' {
+          docker.withRegistry('https://docker.premsiserv.com', 'nexusjenkinsuser') {
             dockerImage.push(packageVersion)
             dockerImage.push("latest")
           }
